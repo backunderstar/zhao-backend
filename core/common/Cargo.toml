@@ -1,0 +1,16 @@
+[package]
+name = "common"
+version = "0.1.0"
+edition = "2024"
+[lib]
+path = "lib.rs"
+
+[dependencies]
+serde = { workspace = true }
+salvo = { workspace = true }
+thiserror = { workspace = true }
+sea-orm = { workspace = true }
+anyhow = { workspace = true }
+jsonwebtoken = { workspace = true }
+validator = { workspace = true }
+tracing = { workspace = true }

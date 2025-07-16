@@ -1,0 +1,38 @@
+listen_addr = "127.0.0.1:8008"
+
+[db]
+type = "sqlite" # postgresql, mysql, sqlite
+sqlite_path = "./data/db.sqlite"
+
+host = "127.0.0.1"
+port = 5432
+database = "zhao"
+username = "zhao"
+password = "123456"
+
+min_connections = 5
+max_connections = 100
+idle_timeout = 8
+connect_timeout = 8
+sqlx_logging = false
+
+[jwt]
+secret = "zew"
+expiry = 3600
+
+[log]
+# 
+filter_level = "info"
+with_ansi = true
+stdout = true
+directory = "./logs"
+file_name = "app.log"
+# "minutely" "hourly" "daily" "never"
+rolling = "daily"
+# "full" "compact" "json" "pretty"
+format = "pretty"
+with_level = true
+with_target = true
+with_thread_ids = true
+with_thread_names = true
+with_source_location = true

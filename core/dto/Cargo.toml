@@ -1,0 +1,18 @@
+[package]
+name = "dto"
+version = "0.1.0"
+edition = "2024"
+[lib]
+path = "lib.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+serde = { workspace = true }
+salvo = { workspace = true }
+sea-orm = { workspace = true }
+validator = { workspace = true }
+tracing = { workspace = true }
+
+entity = { path = "../entity" }
+common = { path = "../common" }
+util = { path = "../util" }

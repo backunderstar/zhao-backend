@@ -1,0 +1,19 @@
+[package]
+name = "util"
+version = "0.1.0"
+edition = "2024"
+[lib]
+path = "lib.rs"
+
+[dependencies]
+argon2 = { workspace = true }
+jsonwebtoken = { workspace = true }
+serde = { workspace = true }
+anyhow = { workspace = true }
+time = { workspace = true }
+rand = { workspace = true }
+blake3 = { workspace = true }
+
+entity = { path = "../entity" }
+config = { path = "../config" }
+common = { path = "../common" }

@@ -1,0 +1,14 @@
+[package]
+name = "hoop"
+version = "0.1.0"
+edition = "2024"
+[lib]
+path = "lib.rs"
+
+[dependencies]
+salvo = { workspace = true }
+
+entity = { path = "../entity" }
+common = { path = "../common" }
+util = { path = "../util" }
+config = { path = "../config" }

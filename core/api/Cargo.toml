@@ -1,0 +1,21 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2024"
+[lib]
+path = "lib.rs"
+
+[dependencies]
+salvo = { workspace = true }
+tokio = { workspace = true }
+sea-orm = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+
+config = { path = "../config" }
+hoop = { path = "../hoop" }
+db = { path = "../db" }
+dto = { path = "../dto" }
+common = { path = "../common" }
+entity = { path = "../entity" }
+util = { path = "../util" }
