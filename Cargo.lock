@@ -174,7 +174,7 @@ dependencies = [
  "nom",
  "num-traits",
  "rusticata-macros",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
 ]
 
@@ -614,6 +614,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "chardetng"
+version = "0.1.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "14b8f0b65b7b08ae3c8187e8d77174de20cb6777864c6b832d8ad365999cf1ea"
+dependencies = [
+ "cfg-if 1.0.3",
+ "encoding_rs",
+ "memchr",
+]
+
+[[package]]
 name = "chrono"
 version = "0.4.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -643,11 +654,11 @@ name = "common"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "jsonwebtoken",
+ "jsonwebtoken 10.0.0",
  "salvo",
  "sea-orm",
  "serde",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "tracing",
  "validator",
 ]
@@ -704,6 +715,15 @@ name = "constant_time_eq"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7c74b8349d32d297c9134b8c88677813a227df8f779daa29bfc29c183fe3dca6"
+
+[[package]]
+name = "content_inspector"
+version = "0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b7bda66e858c683005a53a9a60c69a4aca7eeaa45d124526e389f7aec8e62f38"
+dependencies = [
+ "memchr",
+]
 
 [[package]]
 name = "cookie"
@@ -1897,6 +1917,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "jsonwebtoken"
+version = "10.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1417155a38e99d7704ddb3ea7445fe57fdbd5d756d727740a9ed8b9ebaed6e1"
+dependencies = [
+ "base64 0.22.1",
+ "getrandom 0.2.16",
+ "js-sys",
+ "pem",
+ "serde",
+ "serde_json",
+ "signature",
+ "simple_asn1",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2302,23 +2338,22 @@ dependencies = [
 
 [[package]]
 name = "opentelemetry"
-version = "0.30.0"
+version = "0.31.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aaf416e4cb72756655126f7dd7bb0af49c674f4c1b9903e80c009e0c37e552e6"
+checksum = "b84bcd6ae87133e903af7ef497404dda70c60d0ea14895fc8a5e6722754fc2a0"
 dependencies = [
  "futures-core",
  "futures-sink",
  "js-sys",
  "pin-project-lite",
- "thiserror 2.0.16",
- "tracing",
+ "thiserror 2.0.17",
 ]
 
 [[package]]
 name = "opentelemetry-http"
-version = "0.30.0"
+version = "0.31.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50f6639e842a97dbea8886e3439710ae463120091e2e064518ba8e716e6ac36d"
+checksum = "d7a6d09a73194e6b66df7c8f1b680f156d916a1a942abf2de06823dd02b7855d"
 dependencies = [
  "async-trait",
  "bytes",
@@ -2328,9 +2363,9 @@ dependencies = [
 
 [[package]]
 name = "opentelemetry-semantic-conventions"
-version = "0.30.0"
+version = "0.31.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "83d059a296a47436748557a353c5e6c5705b9470ef6c95cfc52c21a8814ddac2"
+checksum = "e62e29dfe041afb8ed2a6c9737ab57db4907285d999ef8ad3a59092a36bdc846"
 
 [[package]]
 name = "ordered-float"
@@ -2668,7 +2703,7 @@ dependencies = [
  "rustc-hash",
  "rustls",
  "socket2",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "tokio",
  "tracing",
  "web-time",
@@ -2689,7 +2724,7 @@ dependencies = [
  "rustls",
  "rustls-pki-types",
  "slab",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "tinyvec",
  "tracing",
  "web-time",
@@ -2711,9 +2746,9 @@ dependencies = [
 
 [[package]]
 name = "quote"
-version = "1.0.40"
+version = "1.0.41"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1885c039570dc00dcb4ff087a89e185fd56bae234ddc7f056a945bf36467248d"
+checksum = "ce25767e7b499d1b604768e7cde645d14cc8584231ea6b295e9c9eb22c02e1d1"
 dependencies = [
  "proc-macro2",
 ]
@@ -3073,7 +3108,7 @@ dependencies = [
  "openssl-probe",
  "rustls-pki-types",
  "schannel",
- "security-framework 3.5.0",
+ "security-framework 3.5.1",
 ]
 
 [[package]]
@@ -3097,9 +3132,9 @@ dependencies = [
 
 [[package]]
 name = "rustls-webpki"
-version = "0.103.6"
+version = "0.103.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8572f3c2cb9934231157b45499fc41e1f58c589fdfb81a844ba873265e80f8eb"
+checksum = "e10b3f4191e8a80e6b43eebabfac91e5dcecebb27a71f04e820c47ec41d314bf"
 dependencies = [
  "ring",
  "rustls-pki-types",
@@ -3120,9 +3155,9 @@ checksum = "28d3b2b1366ec20994f1fd18c3c594f05c5dd4bc44d8bb0c1c632c8d6829481f"
 
 [[package]]
 name = "salvo"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad6f4e26c89c459dd176ab6ea24637c93d43da3364a21edcadd2da1e8e66ed25"
+checksum = "b764f83691ccc2f880670731bf75c5351ce53d421a21e84b615dd041f56f25af"
 dependencies = [
  "salvo-cache",
  "salvo-compression",
@@ -3143,9 +3178,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-cache"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c79546875d96a4b8c666c8640bb8f1895d746ba2e149d076031d82ebecce22d"
+checksum = "0ee6550d3365fc36da436b9f464b94007115f4e747583759875eaab2922c3794"
 dependencies = [
  "bytes",
  "moka",
@@ -3155,9 +3190,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-compression"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "88c3a353a1f50d57e7fe79fe257deda99ee33238eb475f5a7c57581149201b19"
+checksum = "3077e02fe5e7252a7a360531500ecc1ca47913f82a4481611dc3215da820e4db"
 dependencies = [
  "brotli",
  "bytes",
@@ -3173,9 +3208,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-cors"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce56464a0d0aa1dd8c9725973957bd2ee98a671dfeee4add11d03888744966b9"
+checksum = "9cfed196b05a25a442f9065b671605f1862fa34dd910b9a267f7f76346cab76a"
 dependencies = [
  "bytes",
  "salvo_core",
@@ -3184,18 +3219,18 @@ dependencies = [
 
 [[package]]
 name = "salvo-craft"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6e1c643a84b1dbd82bde3dae51620feb31671ec0c35e5c83f287578c598dcb6c"
+checksum = "abbccb0ca045936462f95f3a29ffacce50c65a6b2c9c0bc906216f2a4911674a"
 dependencies = [
  "salvo-craft-macros",
 ]
 
 [[package]]
 name = "salvo-craft-macros"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c3ea6c42c742334f014de4e367f0b62d22afb737b7bbec467c3bf3306db0c82b"
+checksum = "51892396d74cfc8ce82f8e4fc25257ee60b0cb96268da67f27b0d6a5171a2560"
 dependencies = [
  "proc-macro-crate",
  "proc-macro2",
@@ -3206,9 +3241,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-csrf"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2f4838fd29667f16df24dbf0a560d60d380da18dd8b273ac5005f61e73b490d2"
+checksum = "6f213e0bd0151ab8571de2526c74d9a344a3626ec871fd808eb1b492623ada59"
 dependencies = [
  "aead",
  "aes-gcm",
@@ -3227,9 +3262,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-flash"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "505fba092d90b905f5e99100d804dcca4f9274ac217b5c023a4f7fa36da89482"
+checksum = "712b014bb28b25ba27e965516baa8087c0cf7afc65915f4b026ff263c649414d"
 dependencies = [
  "salvo-session",
  "salvo_core",
@@ -3257,29 +3292,29 @@ dependencies = [
 
 [[package]]
 name = "salvo-jwt-auth"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "156f8dc72dd4e7c8d6b087a2a5846b02d21335ae332029f87ea9f2a289b7935a"
+checksum = "7cc6d0896ca916b5f9c50fe4db31325b2dd56fd7240c9ee16ce05149fa2368b7"
 dependencies = [
  "base64 0.22.1",
  "bytes",
  "http-body-util",
  "hyper-rustls",
  "hyper-util",
- "jsonwebtoken",
+ "jsonwebtoken 9.3.1",
  "salvo_core",
  "serde",
  "serde_json",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "tokio",
  "tracing",
 ]
 
 [[package]]
 name = "salvo-oapi"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e60db828cfa24ac26d9e8a2d0721aeaf7ec10a8f7cd7009dd10badb9ad2836cc"
+checksum = "4f0a2772b6d87ea0ab0ccb258c1dcfdb93dd08233cb0e9bd7a702d75901188a6"
 dependencies = [
  "anyhow",
  "base64 0.22.1",
@@ -3301,7 +3336,7 @@ dependencies = [
  "serde_json",
  "serde_norway",
  "smallvec",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
  "tokio",
  "tracing",
@@ -3312,9 +3347,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-oapi-macros"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3bd5dad5158e3e84c08fbec122ccc03493abfac35efe2277e10c46707e91b31a"
+checksum = "6cfd6fb96c8d8af944b5a12c85f5fb450f3c38d0fed3c9236fb51c6d060a3544"
 dependencies = [
  "proc-macro-crate",
  "proc-macro2",
@@ -3327,9 +3362,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-otel"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26383d968aacb942ebf380cef5b1c013c7000e75534a8c062c1aa6cc2c93e70e"
+checksum = "d59d6dfe3392eb09aba115062174e1cc1b8a1ff9d91ca14803bcd6a7aef6b67a"
 dependencies = [
  "opentelemetry",
  "opentelemetry-http",
@@ -3340,9 +3375,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-proxy"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5652047c151c7b24506e0c6ed8f7dc2fcb70e3334bdc1d7051ef2b3d9a08fd60"
+checksum = "082ebf43696702ad11629fe79c7e3cff3da8703c64401f04e5e1342316b5a008"
 dependencies = [
  "fastrand",
  "futures-util",
@@ -3358,9 +3393,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-rate-limiter"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5d103fb415199ef74fa467958a072be332311240e5863dcd5be9c024785472ce"
+checksum = "7feaf59227ca506d2d52550625a02d1b6b51be725459153e6fa097fdaa30f80f"
 dependencies = [
  "moka",
  "salvo_core",
@@ -3372,9 +3407,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-serde-util"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "95ae7e72ab1551e8c1a5b588441c472db2c37c3b25d3b7af6b7bceb52826be64"
+checksum = "30e633d92ddf90b336db7ad48aae621eb290f15552d314bb99831ee807a0350b"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3383,9 +3418,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-serve-static"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "54f7fdf2bc6d7127d8acedf97bf7baced4794c2df02446450dbe489241a1d582"
+checksum = "a62879ed0913c7262182a660c9faf043a44a1ee7f8e05a797e4cfeb81275e508"
 dependencies = [
  "hex",
  "mime",
@@ -3403,9 +3438,9 @@ dependencies = [
 
 [[package]]
 name = "salvo-session"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "beeae8aeadd09a044e4969cb2762f87c28c0d7c5941ad424ad50c2bbece46cf3"
+checksum = "2b40ee45e2f2ae3cf380b10ffa1ffb9bb9be001f32ab0afd159674adacdfcf3e"
 dependencies = [
  "async-session",
  "cookie",
@@ -3415,15 +3450,17 @@ dependencies = [
 
 [[package]]
 name = "salvo_core"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59e4be0500f04a7a7534eb55f8a7c365fac094e77c9b3b5bcd5a008d76e81278"
+checksum = "636c82a8a74ad09066d207a242fb8e8374ddc9118992723fe571497f0a8d038a"
 dependencies = [
  "anyhow",
  "async-trait",
  "base64 0.22.1",
  "brotli",
  "bytes",
+ "chardetng",
+ "content_inspector",
  "cookie",
  "encoding_rs",
  "enumflags2",
@@ -3464,7 +3501,7 @@ dependencies = [
  "socket2",
  "sync_wrapper",
  "tempfile",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "tokio",
  "tokio-native-tls",
  "tokio-openssl",
@@ -3478,9 +3515,9 @@ dependencies = [
 
 [[package]]
 name = "salvo_extra"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b137e510a35424bc4feae1970c48f996a6e07c92f8248e85365100fc82465aaf"
+checksum = "81dbb9c13694319ddae4735548bcfda4b482b0db9135ee384619a14a73254ea8"
 dependencies = [
  "base64 0.22.1",
  "etag",
@@ -3500,9 +3537,9 @@ dependencies = [
 
 [[package]]
 name = "salvo_macros"
-version = "0.84.0"
+version = "0.84.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "43d891c4a5df7c1618872c0ffd4d646d92caf737980334baa74f222901d43977"
+checksum = "fef1a33beb52ff6fd0589ada9117cb5fe2e50518b127cd0f217fa2ce09061ea4"
 dependencies = [
  "proc-macro-crate",
  "proc-macro2",
@@ -3571,7 +3608,7 @@ dependencies = [
  "serde_json",
  "sqlx",
  "strum",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
  "tracing",
  "url",
@@ -3645,9 +3682,9 @@ dependencies = [
 
 [[package]]
 name = "security-framework"
-version = "3.5.0"
+version = "3.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cc198e42d9b7510827939c9a15f5062a0c913f3371d765977e586d2fe6c16f4a"
+checksum = "b3297343eaf830f66ede390ea39da1d462b6b0c1b000f420d0a83f898bbbe6ef"
 dependencies = [
  "bitflags",
  "core-foundation 0.10.1",
@@ -3674,9 +3711,9 @@ checksum = "d767eb0aabc880b29956c35734170f26ed551a859dbd361d140cdbeca61ab1e2"
 
 [[package]]
 name = "serde"
-version = "1.0.227"
+version = "1.0.228"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "80ece43fc6fbed4eb5392ab50c07334d3e577cbf40997ee896fe7af40bba4245"
+checksum = "9a8e94ea7f378bd32cbbd37198a4a91436180c5bb472411e48b5ec2e2124ae9e"
 dependencies = [
  "serde_core",
  "serde_derive",
@@ -3696,18 +3733,18 @@ dependencies = [
 
 [[package]]
 name = "serde_core"
-version = "1.0.227"
+version = "1.0.228"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7a576275b607a2c86ea29e410193df32bc680303c82f31e275bbfcafe8b33be5"
+checksum = "41d385c7d4ca58e59fc732af25c3983b67ac852c1a25000afe1175de458b67ad"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.227"
+version = "1.0.228"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "51e694923b8824cf0e9b382adf0f60d4e05f348f357b38833a3fa5ed7c2ede04"
+checksum = "d540f220d3187173da220f885ab66608367b6574e925011a9353e4badda91d79"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3844,7 +3881,7 @@ checksum = "297f631f50729c8c99b84667867963997ec0b50f32b2a7dbcab828ef0541e8bb"
 dependencies = [
  "num-bigint",
  "num-traits",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
 ]
 
@@ -3936,7 +3973,7 @@ dependencies = [
  "serde_json",
  "sha2 0.10.9",
  "smallvec",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
  "tokio",
  "tokio-stream",
@@ -4024,7 +4061,7 @@ dependencies = [
  "smallvec",
  "sqlx-core",
  "stringprep",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
  "tracing",
  "uuid",
@@ -4067,7 +4104,7 @@ dependencies = [
  "smallvec",
  "sqlx-core",
  "stringprep",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
  "tracing",
  "uuid",
@@ -4094,7 +4131,7 @@ dependencies = [
  "serde",
  "serde_urlencoded",
  "sqlx-core",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
  "tracing",
  "url",
@@ -4247,11 +4284,11 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "2.0.16"
+version = "2.0.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3467d614147380f2e4e374161426ff399c91084acd2363eaf549172b3d5e60c0"
+checksum = "f63587ca0f12b72a0600bcba1d40081f830876000bb46dd2337a3051618f4fc8"
 dependencies = [
- "thiserror-impl 2.0.16",
+ "thiserror-impl 2.0.17",
 ]
 
 [[package]]
@@ -4267,9 +4304,9 @@ dependencies = [
 
 [[package]]
 name = "thiserror-impl"
-version = "2.0.16"
+version = "2.0.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c5e1be1c48b9172ee610da68fd9cd2770e7a4056cb3fc98710ee6906f0c7960"
+checksum = "3ff15c8ecd7de3849db632e14d18d2571fa09dfc5ed93479bc4485c7a517c913"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4418,9 +4455,9 @@ dependencies = [
 
 [[package]]
 name = "tokio-tungstenite"
-version = "0.27.0"
+version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "489a59b6730eda1b0171fcfda8b121f4bee2b35cba8645ca35c5f7ba3eb736c1"
+checksum = "d25a406cddcc431a75d3d9afc6a7c0f7428d4891dd973e4d54c56b46127bf857"
 dependencies = [
  "futures-util",
  "log",
@@ -4655,22 +4692,22 @@ checksum = "e421abadd41a4225275504ea4d6566923418b7f05506fbc9c0fe86ba7396114b"
 
 [[package]]
 name = "tungstenite"
-version = "0.27.0"
+version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eadc29d668c91fcc564941132e17b28a7ceb2f3ebf0b9dae3e03fd7a6748eb0d"
+checksum = "8628dcc84e5a09eb3d8423d6cb682965dea9133204e8fb3efee74c2a0c259442"
 dependencies = [
  "bytes",
  "log",
  "rand 0.9.2",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "utf-8",
 ]
 
 [[package]]
 name = "typenum"
-version = "1.18.0"
+version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1dccffe3ce07af9386bfd29e80c0ab1a8205a2fc34e4bcd40364df902cfa8f3f"
+checksum = "562d481066bde0658276a35467c4af00bdc6ee726305698a55b86e61d7ad82bb"
 
 [[package]]
 name = "ulid"
@@ -4780,7 +4817,7 @@ dependencies = [
  "common",
  "config",
  "entity",
- "jsonwebtoken",
+ "jsonwebtoken 10.0.0",
  "rand 0.9.2",
  "serde",
  "time",
@@ -5421,7 +5458,7 @@ dependencies = [
  "nom",
  "oid-registry",
  "rusticata-macros",
- "thiserror 2.0.16",
+ "thiserror 2.0.17",
  "time",
 ]
 
@@ -5519,9 +5556,9 @@ dependencies = [
 
 [[package]]
 name = "zeroize"
-version = "1.8.1"
+version = "1.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde"
+checksum = "b97154e67e32c85465826e8bcc1c59429aaaf107c1e4a9e53c8d8ccd5eff88d0"
 
 [[package]]
 name = "zerotrie"

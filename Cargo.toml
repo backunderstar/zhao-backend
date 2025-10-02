@@ -31,7 +31,7 @@ sea-orm = { version = "1", "features" = [
     "sqlx-sqlite",
     "sqlx-postgres",
 ] }
-jsonwebtoken = { version = "9" }
+jsonwebtoken = { version = "10" }
 rust-embed = { version = "8" }
 tera = { version = "1" }
 argon2 = { version = "0" }
