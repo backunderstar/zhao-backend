@@ -21,7 +21,7 @@ secret = "zew"
 expiry = 3600
 
 [log]
-# 
+# info, debug, trace, warn, error
 filter_level = "info"
 with_ansi = true
 stdout = true
@@ -33,6 +33,6 @@ rolling = "daily"
 format = "pretty"
 with_level = true
 with_target = true
-with_thread_ids = true
+with_thread_ids = false
 with_thread_names = true
 with_source_location = true

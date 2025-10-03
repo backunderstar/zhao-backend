@@ -3,7 +3,7 @@ use jsonwebtoken::{Algorithm, DecodingKey, EncodingKey, Validation, decode};
 use serde::{Deserialize, Serialize};
 use time::{Duration, OffsetDateTime};
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct JwtClaims {
     username: String,
     user_id: i32,
