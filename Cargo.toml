@@ -7,13 +7,13 @@ edition = "2024"
 members = ["core/*"]
 
 [workspace.dependencies]
-figment = { version = "0", features = ["env", "toml"] }
-serde = { version = "1" }
-thiserror = { version = "2" }
+figment = { version = "0.10", features = ["env", "toml"] }
+serde = { version = "1.0" }
+thiserror = { version = "2.0" }
 anyhow = { version = "1" }
-tracing = { version = "0" }
-tracing-appender = { version = "0" }
-tracing-subscriber = { version = "0", features = [
+tracing = { version = "0.1" }
+tracing-appender = { version = "0.2" }
+tracing-subscriber = { version = "0.3", features = [
     "std",
     "fmt",
     "env-filter",
@@ -22,24 +22,24 @@ tracing-subscriber = { version = "0", features = [
     "local-time",
     "json",
 ] }
-time = { version = "0" }
-validator = { version = "0", features = ["derive"] }
-tokio = { version = "1", features = ["full"] }
-salvo = { version = "0", features = ["full"] }
-sea-orm = { version = "1", "features" = [
+time = { version = "0.3" }
+validator = { version = "0.20", features = ["derive"] }
+tokio = { version = "1.48", features = ["full"] }
+salvo = { version = "0.86", features = ["full"] }
+sea-orm = { version = "1.1", "features" = [
     "runtime-tokio-rustls",
     "sqlx-sqlite",
     "sqlx-postgres",
 ] }
-jsonwebtoken = { version = "10", features = ["rust_crypto"]}
-rust-embed = { version = "8" }
-tera = { version = "1" }
-argon2 = { version = "0" }
-blake3 = { version = "1" }
-rand = { version = "0" }
+jsonwebtoken = { version = "10.2", features = ["rust_crypto"]}
+rust-embed = { version = "8.9" }
+tera = { version = "1.20" }
+argon2 = { version = "0.5" }
+blake3 = { version = "1.8" }
+rand = { version = "0.9" }
 
 [dependencies]
-mimalloc = { version = "0", default-features = false }
+mimalloc = { version = "0.1", default-features = false }
 # openssl = { version = "*", features = ["vendored"] }
 tokio = { workspace = true }
 
@@ -63,4 +63,4 @@ debug = false
 lto = "fat"
 opt-level = 3
 panic = "abort"
-strip = "symbols"
+strip = true
