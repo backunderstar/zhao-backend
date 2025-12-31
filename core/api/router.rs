@@ -37,6 +37,7 @@ pub fn get_all_route() -> Router {
                         .push(
                             Router::with_path("system")
                                 .get(system::get)
+                                
                                 .put(system::update),
                         )
                         // user

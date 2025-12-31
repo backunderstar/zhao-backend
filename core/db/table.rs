@@ -19,10 +19,15 @@ pub async fn create_tables(db: &DatabaseConnection) -> AppResult<()> {
             .create_table_from_entity(Article)
             .if_not_exists()
             .take(),
-        /* schema
+        schema
             .create_table_from_entity(UserArticle)
             .if_not_exists()
-            .take(), */
+            .take(),
+        schema.create_table_from_entity(Menu).if_not_exists().take(),
+        schema
+            .create_table_from_entity(UserMenu)
+            .if_not_exists()
+            .take(),
         schema
             .create_table_from_entity(Image)
             .if_not_exists()

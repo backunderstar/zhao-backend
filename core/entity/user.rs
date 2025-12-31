@@ -64,6 +64,15 @@ impl Related<super::article::Entity> for Entity {
     }
 }
 
+impl Related<super::menu::Entity> for Entity {
+    fn to() -> RelationDef {
+        super::user_menu::Relation::Menu.def()
+    }
+    fn via() -> Option<RelationDef> {
+        Some(super::user_menu::Relation::User.def().rev())
+    }
+}
+
 #[async_trait]
 impl ActiveModelBehavior for ActiveModel {
     async fn before_save<C>(mut self, _db: &C, insert: bool) -> Result<Self, DbErr>
