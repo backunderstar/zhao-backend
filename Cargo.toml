@@ -25,7 +25,7 @@ tracing-subscriber = { version = "0.3", features = [
 time = { version = "0.3" }
 validator = { version = "0.20", features = ["derive"] }
 tokio = { version = "1.48", features = ["full"] }
-salvo = { version = "0.86", features = ["full"] }
+salvo = { version = "0.87", features = ["full"] }
 sea-orm = { version = "1.1", "features" = [
     "runtime-tokio-rustls",
     "sqlx-sqlite",
@@ -40,7 +40,6 @@ rand = { version = "0.9" }
 
 [dependencies]
 mimalloc = { version = "0.1", default-features = false }
-# openssl = { version = "*", features = ["vendored"] }
 tokio = { workspace = true }
 
 api = { path = "core/api" }
